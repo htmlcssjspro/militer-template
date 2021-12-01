@@ -8,10 +8,10 @@ test
 
 gulp/ftpConfig.js
 
+www/config/dbconfig.php
 www/components/**
 www/layout/**
 www/views/**
-
 www/public/css/**
 www/public/js/**
 www/public/fonts/**
