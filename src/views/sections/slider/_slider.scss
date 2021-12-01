@@ -1,0 +1,28 @@
+.slider__item {
+    height: 300px;
+
+    &_item-1 {
+        @extend .slider__item;
+        background-color: #f00;
+    }
+
+    &_item-2 {
+        @extend .slider__item;
+        background-color: #0f0;
+    }
+
+    &_item-3 {
+        @extend .slider__item;
+        background-color: #00f;
+    }
+
+    &_item-4 {
+        @extend .slider__item;
+        background-color: #f0f;
+    }
+
+    &_item-5 {
+        @extend .slider__item;
+        background-color: #ff0;
+    }
+}

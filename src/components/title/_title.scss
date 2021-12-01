@@ -1,0 +1,18 @@
+.title {
+    $title: &;
+
+    & {
+        margin: 1em 0;
+    }
+
+    &_main {
+        @extend #{$title};
+        font-size: 1em;
+    }
+
+    &_sup,
+    &_sub {
+        @extend #{$title};
+        font-size: 0.5em;
+    }
+}

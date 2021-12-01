@@ -1,0 +1,104 @@
+{
+    "env": {
+        "es6": true,
+        "es2017": true,
+        "es2020": true,
+        "es2021": true,
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "shared-node-browser": true,
+        "jquery": true,
+        "prototypejs": true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "ecmaVersion": "latest", // 2015 6, 2016 7, 2017 8, 2018 9, 2019 10, 2020 11, 2021 12, 2022 13
+        "sourceType": "module", // "script"
+        "ecmaFeatures": {
+            "globalReturn": true,
+            "impliedStrict": true,
+            "jsx": true
+        }
+    },
+    "plugins": [],
+    "rules": {
+        "arrow-spacing": "error",
+        "comma-spacing": "error",
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1,
+                "flatTernaryExpressions": false,
+                "offsetTernaryExpressions": false
+            }
+        ],
+        "no-var": "error",
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "func-call-spacing": [
+            "error",
+            "never"
+        ],
+        "no-alert": "error",
+        "no-console": [
+            "error",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
+        "key-spacing": [
+            "error",
+            {
+                "align": "value"
+            }
+        ],
+        "no-multi-spaces": [
+            "error",
+            {
+                "ignoreEOLComments": true,
+                "exceptions": {
+                    "VariableDeclarator": true,
+                    "ImportDeclaration": true
+                }
+            }
+        ],
+        "space-before-function-paren": [
+            "error",
+            "never"
+        ],
+        "space-in-parens": [
+            "error",
+            "never"
+        ],
+        "space-infix-ops": "error",
+        "space-unary-ops": "error",
+        "operator-linebreak": [
+            "error",
+            "before",
+            {
+                "overrides": {
+                    "=": "after", // before | after | ignore
+                    "||": "ignore" // before | after | ignore
+                }
+            }
+        ]
+    }
+}

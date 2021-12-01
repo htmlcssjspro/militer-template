@@ -1,0 +1,17 @@
+.vscode
+*.code-workspace
+
+node_modules
+package-lock.json
+
+test
+
+gulp/ftpConfig.js
+
+www/components/**
+www/layout/**
+www/views/**
+
+www/public/css/**
+www/public/js/**
+www/public/fonts/**

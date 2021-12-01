@@ -1,0 +1,24 @@
+%png-icon {
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+
+  &:hover::before {
+    opacity: 0.9;
+  }
+}
+
+
+%png-someicon {
+  @extend %png-icon;
+
+  &::before {
+    background: url() center / contain no-repeat;
+  }
+}

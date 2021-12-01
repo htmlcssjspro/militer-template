@@ -1,0 +1,88 @@
+%svg_md_icon {
+
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: middle;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &::before {
+    margin-right: 0.5em;
+  }
+
+  &::after {
+    margin-left: 0.5em;
+  }
+}
+
+%svg_md2_icon {
+  width: 24px;
+  height: 24px;
+}
+
+%svg_md_keyboard_arrow_up {
+
+  &::after {
+    @extend %svg_md_icon::after;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNy40MSAxNS40MUwxMiAxMC44M2w0LjU5IDQuNThMMTggMTRsLTYtNi02IDZ6Ii8+PC9zdmc+);
+  }
+}
+
+%svg_md_keyboard_arrow_right {
+
+  &::after {
+    @extend %svg_md_icon::after;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNOC41OSAxNi4zNGw0LjU4LTQuNTktNC41OC00LjU5TDEwIDUuNzVsNiA2LTYgNnoiLz48L3N2Zz4=);
+  }
+}
+
+%svg_md_keyboard_arrow_left {
+
+  &::after {
+    @extend %svg_md_icon::after;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTUuNDEgMTYuMDlsLTQuNTgtNC41OSA0LjU4LTQuNTlMMTQgNS41bC02IDYgNiA2eiIvPjwvc3ZnPg==);
+  }
+}
+
+%svg_md_keyboard_arrow_down {
+
+  &::after {
+    @extend %svg_md_icon::after;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNy40MSA3Ljg0TDEyIDEyLjQybDQuNTktNC41OEwxOCA5LjI1bC02IDYtNi02eiIvPjwvc3ZnPg==);
+  }
+}
+
+
+
+
+
+%svg_md_email {
+  @extend %svg_md_icon;
+
+  &::before {
+    background-image: url();
+  }
+}
+
+%svg_md_person {
+  @extend %svg_md_icon;
+
+  &::before {
+    background-image: url();
+  }
+}
+
+%svg_md_phone {
+  @extend %svg_md_icon;
+
+  &::before {
+    background-image: url();
+  }
+}

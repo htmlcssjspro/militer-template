@@ -1,0 +1,94 @@
+//* Bootstrap
+@import 'variables';
+@import 'assets/scss/normalize';
+@import 'assets/scss/font-face';
+@include font-face('#{$font-family}');
+
+
+.dn {
+    display: none;
+}
+
+
+//* Assets Common
+@import 'assets/scss/flex';
+@import 'assets/scss/media';
+// @import 'assets/scss/mixins/mixin';
+@import 'assets/scss/common/position';
+@import 'assets/scss/common/text-align';
+@import 'assets/scss/common/width';
+@import 'assets/scss/common/box-shadow';
+@import 'assets/scss/common/rounded';
+@import 'assets/scss/common/margin-v';
+
+
+//* Assets Animations & Keyframes
+// @import 'assets/scss/animations/animation';
+@import 'assets/scss/animations/keyframes/kf-fade-height';
+@import 'assets/scss/animations/keyframes/kf-fade-width';
+@import 'assets/scss/animations/keyframes/kf-fade-opasity';
+@import 'assets/scss/animations/keyframes/kf-opacity';
+
+
+//* Assets Icons
+// @import 'assets/scss/icons/css-icons';
+// @import 'assets/scss/icons/png-icons';
+// @import 'assets/scss/icons/png-flags';
+// @import 'assets/scss/icons/png-material-icons';
+// @import 'assets/scss/icons/png-markers';
+// @import 'assets/scss/icons/svg-icons';
+// @import 'assets/scss/icons/svg-md-icons';
+// @import 'assets/scss/icons/svg-ya-icons';
+
+//* Assets Img
+// @import 'assets/scss/img/jpg-img';
+// @import 'assets/scss/img/png-img';
+// @import 'assets/scss/img/svg-img';
+
+//* Assets Includes
+// @import 'assets/swiper/swiper';
+
+
+//* Components
+@import 'src/components/nav/nav';
+@import 'src/components/link/link';
+@import 'src/components/title/title';
+@import 'src/components/logo/logo';
+@import 'src/components/btn/btn';
+@import 'src/components/contacts/contacts';
+@import 'src/components/form/form';
+@import 'src/components/dropdown/dropdown';
+@import 'src/components/dropdown/dropdown-hover';
+
+
+//* Layout
+@import 'src/layout/container/container';
+@import 'src/layout/wrapper/wrapper';
+@import 'src/layout/body/body';
+@import 'src/layout/header/header';
+@import 'src/layout/main/main';
+@import 'src/layout/aside/aside';
+@import 'src/layout/footer/footer';
+@import 'src/layout/design-grid/design-grid';
+
+
+//* Sections
+// @import 'src/views/sections/section';
+@import 'src/views/sections/map/map';
+// @import 'src/views/sections/slider';
+
+
+//* Popups
+@import 'src/views/popups/popup/popup';
+@import 'src/views/popups/login/login';
+@import 'src/views/popups/register/register';
+@import 'src/views/popups/access-restore/access-restore';
+@import 'src/views/popups/response/response';
+
+
+//* Main
+// @import 'main/sections/section/section';
+
+
+//* Page
+// @import 'page/sections/section/section';

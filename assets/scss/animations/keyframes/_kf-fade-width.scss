@@ -1,0 +1,35 @@
+@mixin kf-fade-width {
+    @keyframes fade-in-width {
+        0% {
+            display: none;
+            width: 0;
+        }
+
+        1% {
+            display: '';
+            width: 0;
+        }
+
+        100% {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    @keyframes fade-out-width {
+        0% {
+            display: '';
+            width: 100%;
+        }
+
+        99% {
+            display: '';
+            width: 0;
+        }
+
+        100% {
+            display: none;
+            width: 0;
+        }
+    }
+}

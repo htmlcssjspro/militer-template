@@ -1,0 +1,14 @@
+.aside {
+    $aside: &;
+
+    & {
+        // grid-area: aside;
+        // @extend %container;
+        @include flex(1, 1, 3);
+    }
+
+    &__top,
+    &__bottom,
+    &__wrapper {
+    }
+}

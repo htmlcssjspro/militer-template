@@ -1,0 +1,39 @@
+%png-material-icon {
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+
+  &:hover::before {
+    opacity: 0.9;
+  }
+}
+
+%png-material-email {
+  @extend %png-material-icon;
+
+  &::before {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAABDElEQVR4Ae2WQa4BQRRFz/eH/08MiE4swj5M7ISdsAADVkBgHbYgkWaAETNoExLqpqJal9k7byJp7ql+NzrNC4ZhJEzZkRWcHVNqKJRJySLNhjJCnyziDBGWUQVbhNP9UovVx7ErWo/PfgH80+WSO/xMjz8IEQA0WOSKX9AAAL/g7Fz4pc0xKPxAhxKECsbUeVBn9jZ+9vL98RuBnsgpXUr13rFw8ezUKV1K9XWmgoCA8AN4BLqCpq7AWWHTs0LhSqajpTuljvQXuQR6YrmjggLZefAfUQh6FEiphQVaupYaUaBjgniCHxPIOJRMICOkUeNThMG3Xx2rrKPFr6mAkjBnXzh8z4SEJwzDuAG+yGyl+Z+hpAAAAABJRU5ErkJggg==) center / contain no-repeat;
+  }
+}
+
+%png-material-person {
+  @extend %png-material-icon;
+
+  &::before {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAA+klEQVR4Ae3UAaYCURSH8Q8YMZD3AJoHtYMA7y2g1QS1ghdpAUlBIIACKKGW0FCAICiEjFJQpxAic2eaM1Du71vAnzH3gGXFZ+WoMmV3a0qVHKlyGXBBHrowwCUlDj7yHD4OqeggIXXQI885dOBMHrU6YqiO2sw44KN2NA4cUAuMA8EbfKKGcaCB2o/xN/XQo61/aGYOM/Op0HPpPx27Pi6p8qjcz/WECh7WR8lQokaXEXP2BCwY0eWfEhmUCpQZckJCOjGkTIFEioyRmI0p8pIsPeTFemSJ6ZctkqAtf8TwxQZJ2JpvIjURRS0iLVUDKyKJrgQDdsCyrCvFDgaZKmjtoQAAAABJRU5ErkJggg==) center / contain no-repeat;
+  }
+}
+
+%png-material-phone {
+  @extend %png-material-icon;
+
+  &::before {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAABX0lEQVR4AezWAUQDQBSH8c9SFBRIMrBJEDYCoCCk1aBZLJBQQFKkQgVoIMQACAhBFLEAgGTKJIqliBRqVa22F5xjdmj1DtjvD8D7cHA0NCgbJY9ULc8YigpIzW5Q9Ik41oqaB2cgiJorZyCCmhNnYAg1u87AEmrWnYED1Ew4A88EUNKFOBdGzaXjfJEO1GRqzleYRNEIUrUyCVQ18YTYfRFH3bY9X2IYD6I2sIAnRyZwQTNeDCJmq3iSNYEPQngRomQSxwTwYg0x28SLFs5sIokXvbzbl4jixTRidk8fbkEGCGq8xCtxas2Yf8gdeyyTpJ926pS2iQorVJuigiD//aptIHb7dIORMucVvmqz2FO8MEcAGHedt6tbgiJil2ORb0QzAD3kkV/vT9rYouwpYEU49RuAADEOqXgKWGHSPHoKWM2k2OHacb6Aqk5izJMhS45b3jj/GTAnUxWMglEAAOTkjuQxnDNAAAAAAElFTkSuQmCC) center / contain no-repeat;
+  }
+}

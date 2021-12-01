@@ -1,0 +1,35 @@
+@mixin kf-fade-opasity {
+    @keyframes fade-in-opasity {
+        0% {
+            display: none;
+            opacity: 0;
+        }
+
+        1% {
+            display: '';
+            opacity: 0;
+        }
+
+        100% {
+            display: '';
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-out-opasity {
+        0% {
+            display: '';
+            opacity: 1;
+        }
+
+        99% {
+            display: '';
+            opacity: 0;
+        }
+
+        100% {
+            display: none;
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.popup {
+    $popup: &;
+
+    & {
+        @extend %flex-c;
+        position  : fixed;
+        top       : 0;
+        right     : 0;
+        bottom    : 0;
+        left      : 0;
+        background: $popup-background;
+    }
+
+    &__wrapper {
+        & {
+            @extend %rounded;
+            width     : $popup-width;
+            padding   : $popup-padding;
+            background: $popup-wrapper-background;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+'use strict';
+
+module.exports = {
+    host:     '000.000.000.000',
+    user:     'user',
+    password: 'password',
+    root:     '/',
+};

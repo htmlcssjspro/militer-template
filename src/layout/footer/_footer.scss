@@ -1,0 +1,27 @@
+.footer {
+    $footer: &;
+
+    & {
+        @extend %container;
+        // grid-area: footer;
+    }
+
+    &__top,
+    &__bottom,
+    &__wrapper {
+        @extend %wrapper;
+        @extend %flex-row-sb-c;
+    }
+
+    &__logo {
+        flex: 1 0 auto;
+    }
+
+    &__nav {
+        @extend .nav;
+        @extend %flex-row-sb-c;
+        flex: 3 0 auto;
+    }
+
+    &__link {}
+}

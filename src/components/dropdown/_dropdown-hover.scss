@@ -1,0 +1,26 @@
+.dropdown-hover {
+    $dropdown-hov: &;
+
+    & {
+        position: relative;
+    }
+
+    &>span {
+        // font-size: 1.8rem;
+        // font-weight: bolder;
+        display      : inline-block;
+        border-bottom: 1px dashed $color-text;
+        cursor       : pointer;
+    }
+
+    &>div {
+        position: absolute;
+        display : none;
+        @extend %box-shadow;
+        background: $white;
+    }
+
+    &:hover>div {
+        display: block;
+    }
+}

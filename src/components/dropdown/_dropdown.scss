@@ -1,0 +1,19 @@
+.dropdown {
+    $dropdown: &;
+
+    & {
+        margin: 1em 0;
+    }
+
+    &__toggle {
+        font-size    : 1.8rem;
+        font-weight  : bolder;
+        display      : inline-block;
+        border-bottom: 1px dashed $color-text;
+        cursor       : pointer;
+    }
+
+    &__content {
+        font-size: inherit;
+    }
+}

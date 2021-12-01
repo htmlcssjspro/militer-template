@@ -1,0 +1,79 @@
+// import Swiper bundle with all modules installed
+//* import Swiper from 'swiper/bundle';
+// import styles bundle
+//* import 'swiper/css/bundle';
+
+// core version:
+//* import Swiper from 'swiper';
+
+// core version + modules:
+//* import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
+// import Swiper and modules styles
+//* import 'swiper/css';
+//* import 'swiper/css/navigation';
+//* import 'swiper/css/pagination';
+
+// configure Swiper to use modules
+//* Swiper.use([Navigation, Pagination, Autoplay]);
+
+const modules = [
+    'virtual',
+    'keyboard',
+    'mousewheel',
+    'navigation',
+    'pagination',
+    'scrollbar',
+    'parallax',
+    'zoom',
+    'lazy',
+    'controller',
+    'a11y',
+    'history',
+    'hash-navigation',
+    'autoplay',
+    'thumbs',
+    'free-mode',
+    'grid',
+    'manipulation',
+    'effect-fade',
+    'effect-cube',
+    'effect-flip',
+    'effect-coverflow',
+    'effect-creative',
+    'effect-cards',
+];
+
+
+import Swiper, { Navigation, Pagination, Autoplay, Scrollbar } from 'swiper';
+// Swiper.use([Navigation, Pagination, Autoplay, Scrollbar]);
+
+
+const slider = () => {
+    const swiper = new Swiper('.swiper', {
+        modules:        [Navigation, Pagination, Autoplay, Scrollbar],
+        speed:          500,
+        // direction: 'vertical', // 'horizontal'
+        // slidesPerView: 1,
+        // spaceBetween:  30,
+        centeredSlides: true,
+        loop:           true,
+        effect:	        'slide', // | 'fade' | 'cube' | 'coverflow' | 'flip' | 'creative' | 'cards'	'slide'
+        autoplay:       {
+            delay:                2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el:        '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    });
+};
+
+export default slider;

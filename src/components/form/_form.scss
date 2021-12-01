@@ -1,0 +1,72 @@
+form {
+    fieldset {
+        // max-width: 600px;
+    }
+
+    label {
+        & {
+            @extend %flex-sb-fs;
+            @extend %flex-wrap;
+            margin: 0.5rem 0;
+        }
+
+        span {
+            &:first-of-type {
+                min-width: 140px;
+                max-width: 200px;
+                flex     : 1 0 20%;
+            }
+
+            &:nth-of-type(2) {
+                flex: 1 0 50%;
+            }
+
+            input[type='text'],
+            input[type='email'],
+            input[type='password'],
+            input[type='url'],
+            textarea {
+                width    : 100%;
+                min-width: 200px;
+            }
+        }
+
+        button {
+            display: inline-block;
+            flex   : 0 0 100px;
+        }
+    }
+
+    input {
+        outline-width: 1px;
+
+        &[data-validation='valid'] {
+            outline-style: auto;
+            outline-color: $green;
+        }
+
+        &[data-validation='invalid'] {
+            outline-style: auto;
+            outline-color: $red;
+        }
+    }
+
+    span.error_input {
+        // visibility: hidden;
+        color: $color-danger;
+    }
+
+    select {
+        & {}
+
+        option {
+            &[selected] {
+                font-weight: bolder;
+            }
+        }
+    }
+
+    button {
+        & {}
+    }
+}

@@ -1,0 +1,12 @@
+.content {
+    & {
+        @extend %container;
+        @extend %dev_container;
+    }
+
+    &__wrapper {
+        @extend %wrapper;
+        @extend %dev_wrapper;
+        @extend %flex-row-sb-fs;
+    }
+}

@@ -1,0 +1,16 @@
+.logo {
+    $logo: &;
+
+    & {
+        width: $logo-width;
+        height: $logo-height;
+        background: url($logo-url) center / contain no-repeat;
+    }
+
+    &_header {
+        @extend #{$logo};
+    }
+    &_footer {
+        @extend #{$logo};
+    }
+}

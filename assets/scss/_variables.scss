@@ -1,0 +1,133 @@
+//* CONSTANTS
+
+//* Colors
+// bootstrap colors
+$white   : #ffffff !default;
+$black   : #000000 !default;
+$grey-100: #f8f9fa !default;
+$grey-200: #e9ecef !default;
+$grey-300: #dee2e6 !default;
+$grey-400: #ced4da !default;
+$grey-500: #adb5bd !default;
+$grey-600: #6c757d !default;
+$grey-700: #495057 !default;
+$grey-800: #343a40 !default;
+$grey-900: #212529 !default;
+
+$blue  : #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink  : #e83e8c !default;
+$red   : #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green : #28a745 !default;
+$teal  : #20c997 !default;
+$cyan  : #17a2b8 !default;
+
+//* Viewport
+// bootstrap
+$breakpoint-xl: 1200px !default;
+$breakpoint-lg: 992px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-sm: 576px !default;
+$breakpoint-xs: 0 !default;
+
+$max-width-xl: 1140px !default;
+$max-width-lg: 960px !default;
+$max-width-md: 720px !default;
+$max-width-sm: 540px !default;
+
+//* font-weight
+$font-weight-list: (100: 'Thin',
+    200: 'UltraLight',
+    300: 'Light',
+    400: 'Regular',
+    500: 'Medium',
+    600: 'SemiBold',
+    700: 'Bold',
+    800: 'UltraBold',
+    900: 'Black',
+);
+
+$font-weight-light  : 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-bold   : 700 !default;
+$font-weight-black  : 900 !default;
+
+$font-weight-lighter: lighter !default;
+$font-weight-bolder : bolder !default;
+
+//* PROJECT PREFERENCES
+
+// $DEV: true !default;
+// $PROD: not $DEV !default;
+
+//* theme colors
+$primary  : $blue !default;
+$secondary: $grey-600 !default;
+
+$dark : $grey-800 !default;
+$light: $grey-100 !default;
+
+$success: $green !default;
+$info   : $cyan !default;
+$warning: $yellow !default;
+$danger : $red !default;
+
+//* container&content size
+$container-max-width: 1920px !default;
+$container-min-width: 360px !default;
+$content-max-width  : 1366px !default;
+
+//* container&wrapper margin&padding
+$container-margin : 0 auto !default;
+$container-padding: 0 !default;
+$wrapper-margin   : 0 auto !default;
+$wrapper-padding  : 0 !default;
+
+//* design-grid
+$design-grid-width       : $content-max-width !default;
+$design-grid-gap         : 15px !default;
+$design-grid-col-quantity: 12 !default;
+$design-grid-col-width   : ($design-grid-width/$design-grid-col-quantity) - ($design-grid-gap * 2) !default;
+
+//* font-family
+$font-family: Roboto !default;
+
+//* font-weights list;
+$font-weights: ($font-weight-light, $font-weight-regular, $font-weight-bold, $font-weight-black);
+
+//* text-color
+$color-text: $grey-900 !default;
+
+//* Components
+
+// button
+$btn-bg-color         : $primary !default;
+$btn-bg-hover-color   : $primary !default;
+$btn-color            : $grey-100 !default;
+$btn-hover-color      : $grey-100 !default;
+$btn-border-radius    : 3px !default;
+$btn-box-shadow       : 0 0 2px 0 rgba($black, 0.2) !default;
+$btn-active-box-shadow: inset 0 0 2px 0 rgba($black, 0.2) !default;
+
+// link
+$link-color       : $color-text !default;
+$link-hover-color : $primary !default;
+$link-active-color: $primary !default;
+
+// box
+$border-radius: 20px !default;
+$box-shadow   : 0px 0px 1rem 0px rgba($color-text, 0.2) !default;
+
+// logo
+$logo-width : 100px !default;
+$logo-height: 100px !default;
+$logo-url   : '../img/logo.png' !default;
+
+// popup
+$popup-background        : rgba(0, 0, 0, 0.5) !default;
+$popup-wrapper-background: $white !default;
+$popup-width             : 600px !default;
+$popup-padding           : 3rem !default;
