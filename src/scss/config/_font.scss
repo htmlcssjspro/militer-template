@@ -1,0 +1,46 @@
+//* font-weight
+$font-weight-list: (
+    100: 'Thin',
+    200: 'UltraLight',
+    300: 'Light',
+    400: 'Regular',
+    500: 'Medium',
+    600: 'SemiBold',
+    700: 'Bold',
+    800: 'UltraBold',
+    900: 'Black',
+);
+
+$weight-light: 300 !default;
+$weight-regular: 400 !default;
+$weight-bold: 700 !default;
+$weight-black: 900 !default;
+
+$weight-lighter: lighter !default;
+$weight-bolder: bolder !default;
+
+//* font-family
+$family: Roboto !default;
+//* font-weights list;
+$font-weights: ($weight-light, $weight-regular, $weight-bold);
+
+@mixin font-face($font-family) {
+    @each $weight in $font-weights {
+        $weight-v: map-get($font-weight-list, $weight);
+
+        @font-face {
+            font-family: '#{$font-family}';
+            font-weight: $weight;
+            font-style: normal;
+            src: url('/public/fonts/#{$family}/#{$family}-#{$weight-v}.eot');
+            src: local('#{$family}-#{$weight-v}'), local('#{$family} #{$weight-v}'),
+                url('/public/fonts/#{$family}/#{$family}-#{$weight-v}.eot?#iefix') format('embedded-opentype'),
+                url('/public/fonts/#{$family}/#{$family}-#{$weight-v}.woff2') format('woff2'),
+                url('/public/fonts/#{$family}/#{$family}-#{$weight-v}.woff') format('woff'),
+                url('/public/fonts/#{$family}/#{$family}-#{$weight-v}.ttf') format('truetype'),
+                url('/public/fonts/#{$family}/#{$family}-#{$weight-v}.svg##{$family}-#{$weight-v}') format('svg');
+        }
+    }
+}
+
+@include font-face('#{$family}');

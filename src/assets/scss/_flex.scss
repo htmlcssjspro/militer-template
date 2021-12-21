@@ -1,0 +1,410 @@
+@use 'sass:math';
+
+%display-flex {
+    display: flex;
+}
+
+%justify-center {
+    justify-content: center;
+}
+
+%justify-sa {
+    justify-content: space-around;
+}
+
+%justify-sb {
+    justify-content: space-between;
+}
+
+%justify-se {
+    justify-content: space-evenly;
+}
+
+%ai-c {
+    align-items: center;
+}
+
+%flex-row {
+    flex-direction: row;
+}
+
+%flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+%flex-column {
+    flex-direction: column;
+}
+
+%flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+%flex-wrap {
+    flex-wrap: wrap;
+}
+
+%flex-no-wrap {
+    flex-wrap: nowrap;
+}
+
+%flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+@mixin flex-container($jc: c, $ai: c, $fd: r) {
+    $flex-map: (
+        c: center,
+        sa: space-around,
+        sb: space-between,
+        se: space-evenly,
+        fs: flex-start,
+        fe: flex-end,
+        bl: baseline,
+        st: stretch,
+        r: row,
+        rr: row-reverse,
+        cl: column,
+        cr: column-reverse,
+    );
+
+    $flex-direction: row;
+    $justify-content: center;
+    $align-items: center;
+
+    @each $key, $value in $flex-map {
+        //* flex-direction
+        // Correct values: r|row, rr|row-reverse, cl|column, cr|column-reverse, null
+        @if $fd == $key {
+            $flex-direction: #{map-get($flex-map, $fd)};
+        } @else if $fd == $value {
+            $flex-direction: $value;
+        }
+
+        //* justify-content
+        // Correct values: c|center, sa|space-around, sb|space-between, se|space-evenly, null
+        @if $jc == $key {
+            $justify-content: #{map-get($flex-map, $jc)};
+        } @else if $jc == $value {
+            $justify-content: $value;
+        }
+
+        //* align-items
+        // Correct values: c|center, fs|flex-start, fe|flex-end, st|strech, bl|baseline, null
+        @if $ai == $key {
+            $align-items: #{map-get($flex-map, $ai)};
+        } @else if $ai == $value {
+            $align-items: $value;
+        }
+    }
+
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin flex($grow, $shrink, $base) {
+    flex: $grow $shrink $base;
+}
+@mixin flex-col($grow, $shrink, $col) {
+    flex: $grow $shrink math.percentage(math.div($col, 12));
+}
+
+%flex {
+    &-c {
+        @include flex-container();
+
+        &-c {
+            @include flex-container();
+        }
+
+        &-fs {
+            @include flex-container(c, fs);
+        }
+
+        &-fe {
+            @include flex-container(c, fe);
+        }
+
+        &-st {
+            @include flex-container(c, st);
+        }
+
+        &-bl {
+            @include flex-container(c, bl);
+        }
+    }
+
+    &-sa {
+        @include flex-container(sa, c);
+
+        &-c {
+            @include flex-container(sa, c);
+        }
+
+        &-fs {
+            @include flex-container(sa, fs);
+        }
+
+        &-fe {
+            @include flex-container(sa, fe);
+        }
+
+        &-st {
+            @include flex-container(sa, st);
+        }
+
+        &-bl {
+            @include flex-container(sa, bl);
+        }
+    }
+
+    &-sb {
+        @include flex-container(sb, c);
+
+        &-c {
+            @include flex-container(sb, c);
+        }
+
+        &-fs {
+            @include flex-container(sb, fs);
+        }
+
+        &-fe {
+            @include flex-container(sb, fe);
+        }
+
+        &-st {
+            @include flex-container(sb, st);
+        }
+
+        &-bl {
+            @include flex-container(sb, bl);
+        }
+    }
+
+    &-se {
+        @include flex-container(se, c);
+
+        &-c {
+            @include flex-container(se, c);
+        }
+
+        &-fs {
+            @include flex-container(se, fs);
+        }
+
+        &-fe {
+            @include flex-container(se, fe);
+        }
+
+        &-st {
+            @include flex-container(se, st);
+        }
+
+        &-bl {
+            @include flex-container(se, bl);
+        }
+    }
+
+    &-row {
+        &-c {
+            @include flex-container(c, c, r);
+
+            &-c {
+                @include flex-container(c, c, r);
+            }
+
+            &-fs {
+                @include flex-container(c, fs, r);
+            }
+
+            &-fe {
+                @include flex-container(c, fe, r);
+            }
+
+            &-st {
+                @include flex-container(c, st, r);
+            }
+
+            &-bl {
+                @include flex-container(c, bl, r);
+            }
+        }
+
+        &-sa {
+            @include flex-container(sa, c, r);
+
+            &-c {
+                @include flex-container(sa, c, r);
+            }
+
+            &-fs {
+                @include flex-container(sa, fs, r);
+            }
+
+            &-fe {
+                @include flex-container(sa, fe, r);
+            }
+
+            &-st {
+                @include flex-container(sa, st, r);
+            }
+
+            &-bl {
+                @include flex-container(sa, bl, r);
+            }
+        }
+
+        &-sb {
+            @include flex-container(sb, c, r);
+
+            &-c {
+                @include flex-container(sb, c, r);
+            }
+
+            &-fs {
+                @include flex-container(sb, fs, r);
+            }
+
+            &-fe {
+                @include flex-container(sb, fe, r);
+            }
+
+            &-st {
+                @include flex-container(sb, st, r);
+            }
+
+            &-bl {
+                @include flex-container(sb, bl, r);
+            }
+        }
+
+        &-se {
+            @include flex-container(se, c, r);
+
+            &-c {
+                @include flex-container(se, c, r);
+            }
+
+            &-fs {
+                @include flex-container(se, fs, r);
+            }
+
+            &-fe {
+                @include flex-container(se, fe, r);
+            }
+
+            &-st {
+                @include flex-container(se, st, r);
+            }
+
+            &-bl {
+                @include flex-container(se, bl, r);
+            }
+        }
+    }
+
+    &-col {
+        &-c {
+            @include flex-container(с, c, cl);
+
+            &-c {
+                @include flex-container(с, c, cl);
+            }
+
+            &-sa {
+                @include flex-container(c, sa, cl);
+            }
+
+            &-sb {
+                @include flex-container(c, sb, cl);
+            }
+
+            &-se {
+                @include flex-container(c, se, cl);
+            }
+        }
+
+        &-fs {
+            @include flex-container(fs, c, cl);
+
+            &-c {
+                @include flex-container(fs, c, cl);
+            }
+
+            &-sa {
+                @include flex-container(fs, sa, cl);
+            }
+
+            &-sb {
+                @include flex-container(fs, sb, cl);
+            }
+
+            &-se {
+                @include flex-container(fs, se, cl);
+            }
+        }
+
+        &-fe {
+            @include flex-container(fe, c, cl);
+
+            &-c {
+                @include flex-container(fe, c, cl);
+            }
+
+            &-sa {
+                @include flex-container(fe, sa, cl);
+            }
+
+            &-sb {
+                @include flex-container(fe, sb, cl);
+            }
+
+            &-se {
+                @include flex-container(fe, se, cl);
+            }
+        }
+
+        &-st {
+            @include flex-container(st, c, cl);
+
+            &-c {
+                @include flex-container(st, c, cl);
+            }
+
+            &-sa {
+                @include flex-container(st, sa, cl);
+            }
+
+            &-sb {
+                @include flex-container(st, sb, cl);
+            }
+
+            &-se {
+                @include flex-container(st, se, cl);
+            }
+        }
+
+        &-bl {
+            @include flex-container(bl, c, cl);
+
+            &-c {
+                @include flex-container(bl, c, cl);
+            }
+
+            &-sa {
+                @include flex-container(bl, sa, cl);
+            }
+
+            &-sb {
+                @include flex-container(bl, sb, cl);
+            }
+
+            &-se {
+                @include flex-container(bl, se, cl);
+            }
+        }
+    }
+}

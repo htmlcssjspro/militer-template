@@ -1,22 +1,28 @@
+@use 'scss/config/color';
+@use 'assets/scss/flex';
+@use 'assets/scss/position';
+@use 'scss/common/rounded';
+
+$background: #00000088 !default;
+$wrapper-background: color.$white !default;
+$width: 600px !default;
+$padding: 3rem !default;
+
 .popup {
     $popup: &;
 
     & {
         @extend %flex-c;
-        position  : fixed;
-        top       : 0;
-        right     : 0;
-        bottom    : 0;
-        left      : 0;
-        background: $popup-background;
+        @extend %position-fixed;
+        background: $background;
     }
 
     &__wrapper {
         & {
             @extend %rounded;
-            width     : $popup-width;
-            padding   : $popup-padding;
-            background: $popup-wrapper-background;
+            width: $width;
+            padding: $padding;
+            background: $wrapper-background;
         }
     }
 }

@@ -1,0 +1,179 @@
+@use 'sass:math';
+
+//* CONSTANTS
+
+//* Colors
+// bootstrap colors
+$white: #ffffff !default;
+$black: #000000 !default;
+$grey-100: #f8f9fa !default;
+$grey-200: #e9ecef !default;
+$grey-300: #dee2e6 !default;
+$grey-400: #ced4da !default;
+$grey-500: #adb5bd !default;
+$grey-600: #6c757d !default;
+$grey-700: #495057 !default;
+$grey-800: #343a40 !default;
+$grey-900: #212529 !default;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+//* Viewport
+// bootstrap
+$breakpoint-xl: 1200px !default;
+$breakpoint-lg: 992px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-sm: 576px !default;
+$breakpoint-xs: 0 !default;
+
+$max-width-xl: 1140px !default;
+$max-width-lg: 960px !default;
+$max-width-md: 720px !default;
+$max-width-sm: 540px !default;
+
+//* font-weight
+$font-weight-list: (
+    100: 'Thin',
+    200: 'UltraLight',
+    300: 'Light',
+    400: 'Regular',
+    500: 'Medium',
+    600: 'SemiBold',
+    700: 'Bold',
+    800: 'UltraBold',
+    900: 'Black',
+);
+
+$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-black: 900 !default;
+
+$font-weight-lighter: lighter !default;
+$font-weight-bolder: bolder !default;
+
+//* PROJECT PREFERENCES
+
+$DEV: true;
+$PROD: not $DEV;
+
+$DESIGN_GRID: true;
+
+//* theme colors
+$color-dark: $grey-800 !default;
+// $color-dark: #3d4041;
+$color-light: $grey-100 !default;
+// $color-light: $grey-100;
+$color-info: $cyan !default;
+// $color-info: $cyan;
+$color-success: $green !default;
+// $color-success: $green;
+$color-warning: $yellow !default;
+// $color-warning: $yellow;
+$color-danger: $red !default;
+// $color-danger: $red;
+$color-primary: $blue !default;
+// $color-primary: #1ab248;
+$color-secondary: $grey-600 !default;
+// $color-secondary: #3d4041;
+$color-text: $color-dark !default;
+// $color-text: $color-dark;
+
+//* container&content size
+$container-max-width: 1920px !default;
+// $container-max-width: 1920px;
+$container-min-width: 320px !default;
+// $container-min-width: 320px;
+$content-max-width: 1366px !default;
+$content-max-width: 1200px;
+$content-min-width: 320px !default;
+// $content-min-width     : 320px;
+
+//* container&wrapper margin&padding
+$container-margin: 0 auto !default;
+// $container-margin: 0 auto;
+$container-padding: 0 !default;
+// $container-padding: 0;
+$wrapper-margin: 0 auto !default;
+// $wrapper-margin: 0 auto;
+$wrapper-padding: 0 !default;
+$wrapper-padding: 1rem 0;
+
+//* design-grid
+$design-grid-width: $content-max-width !default;
+$design-grid-gap: 15px !default;
+$design-grid-col-quantity: 12 !default;
+$design-grid-col-width: (math.div($design-grid-width, $design-grid-col-quantity) - ($design-grid-gap * 2)) !default;
+
+//* font-family
+$font-family: Roboto !default;
+// $font-family: Roboto;
+
+//* font-weights list;
+$font-weights: ($font-weight-light, $font-weight-regular, $font-weight-bold);
+
+//* Components
+
+// button
+$btn-bg-color: $color-primary !default;
+// $btn-bg-color: $color-primary;
+$btn-bg-hover-color: $color-primary !default;
+// $btn-bg-hover-color: $color-primary;
+$btn-color: $grey-100 !default;
+// $btn-color: $grey-100;
+$btn-hover-color: $grey-100 !default;
+// $btn-hover-color: $grey-100;
+$btn-border-radius: 3px !default;
+// $btn-border-radius: 3px;
+$btn-box-shadow: 0 0 2px 0 rgba($black, 0.2) !default;
+// $btn-box-shadow: 0 0 2px 0 rgba($black, 0.2);
+$btn-active-box-shadow: inset 0 0 2px 0 rgba($black, 0.2) !default;
+// $btn-active-box-shadow: 0 0 2px 0 rgba($black, 0.2);
+$btn-hover-box-shadow: 0 0 2px 0 rgba($black, 0.7) !default;
+// $btn-hover-box-shadow: 0 0 2px 0 rgba($black, 0.7);
+
+$margin-v-top: 100px !default;
+// $margin-v-top: 100px;
+$margin-v-bottom: 100px !default;
+// $margin-v-bottom: 100px;
+
+// link
+$link-color: $color-text !default;
+// $link-color: $color-text;
+$link-hover-color: $color-primary !default;
+// $link-hover-color: $color-primary;
+$link-active-color: $color-primary !default;
+// $link-active-color: $color-primary;
+
+// box
+$border-radius: 20px !default;
+// $border-radius: 20px;
+$box-shadow: 0px 0px 1rem 0px rgba($color-text, 0.2) !default;
+// $box-shadow: 0px 0px 1rem 0px rgba($color-text, 0.2);
+
+// logo
+$logo-width: 100px !default;
+// $logo-width: 100px;
+$logo-height: 100px !default;
+// $logo-height: 100px;
+$logo-url: '/img/logo/logo.png' !default;
+// $logo-url: '/public/img/logo/logo.png';
+
+// popup
+$popup-background: rgba(0, 0, 0, 0.5) !default;
+// $popup-background: rgba(0, 0, 0, 0.5);
+$popup-wrapper-background: $white !default;
+// $popup-wrapper-background: $white;
+$popup-width: 600px !default;
+// $popup-width: 600px;
+$popup-padding: 3rem !default;
+// $popup-padding: 3rem;

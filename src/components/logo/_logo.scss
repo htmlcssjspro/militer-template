@@ -1,10 +1,14 @@
+$width: 100px !default;
+$height: 100px !default;
+$url: '../img/logo/logo.png' !default;
+
 .logo {
     $logo: &;
 
     & {
-        width: $logo-width;
-        height: $logo-height;
-        background: url($logo-url) center / contain no-repeat;
+        width: $width;
+        height: $height;
+        background: url($url) center / contain no-repeat;
     }
 
     &_header {

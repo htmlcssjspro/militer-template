@@ -1,9 +1,12 @@
+@use 'scss/config/viewport';
+@use 'assets/scss/flex';
+
 .footer {
     $footer: &;
 
     & {
-        @extend %container;
         // grid-area: footer;
+        @extend %container;
     }
 
     &__top,
@@ -18,10 +21,10 @@
     }
 
     &__nav {
-        @extend .nav;
         @extend %flex-row-sb-c;
         flex: 3 0 auto;
     }
 
-    &__link {}
+    &__link {
+    }
 }

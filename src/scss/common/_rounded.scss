@@ -1,0 +1,20 @@
+$border-radius: 20px !default;
+$-border-radius: null;
+
+@function -border-radius() {
+    @return $-border-radius or $border-radius;
+}
+
+@mixin config($border-radius: null) {
+    @if $border-radius {
+        $-border-radius: $border-radius !global;
+    }
+}
+
+@mixin rounded($border-radius) {
+    border-radius: -border-radius();
+}
+
+%rounded {
+    @include rounded($border-radius);
+}

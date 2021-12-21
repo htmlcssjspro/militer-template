@@ -11,7 +11,10 @@ gulp/ftpConfig.js
 www/config/dbconfig.php
 www/components/**
 www/layout/**
-www/views/**
+www/views/pages/**
+www/views/sections/**
+www/views/popups/**
+www/views/email/**
 www/public/css/**
 www/public/js/**
 www/public/fonts/**

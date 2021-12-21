@@ -1,0 +1,38 @@
+// @use 'assets/scss/flex';
+// @use 'assets/scss/position';
+// @use 'assets/scss/width';
+
+// @use 'components/btn/btn';
+// @use 'views/popups/popup/popup';
+// @use 'src/layout/container/container-aspect-ratio';
+
+@use 'scss/common';
+
+.common {
+    // @extend %box-shadow;
+    // @include common.rounded(30px);
+    @include common.config($border-radius: 30px);
+    @include common.config($color: $red);
+}
+
+// .container {
+//     @extend %container-aspect-ratio;
+
+//     &__wrapper {
+//         @extend %container-aspect-ratio__wrapper;
+//     }
+// }
+
+// .flex {
+//     @extend %flex-row-se-c;
+//     // @extend %;
+//     // @include
+// }
+
+// .pos {
+//     @extend %position-corner_top-left;
+// }
+
+// .width-50 {
+//     @extend %width-50;
+// }

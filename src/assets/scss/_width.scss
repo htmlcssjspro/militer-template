@@ -1,0 +1,61 @@
+@mixin width($width) {
+    width: $width * 1%;
+}
+
+%width {
+    &-5 {
+        @include width(5);
+    }
+
+    &-10 {
+        @include width(10);
+    }
+
+    &-15 {
+        @include width(15);
+    }
+
+    &-20 {
+        @include width(20);
+    }
+
+    &-25 {
+        @include width(25);
+    }
+
+    &-30 {
+        @include width(30);
+    }
+
+    &-50 {
+        @include width(50);
+    }
+
+    &-70 {
+        @include width(70);
+    }
+
+    &-75 {
+        @include width(75);
+    }
+
+    &-80 {
+        @include width(80);
+    }
+
+    &-85 {
+        @include width(85);
+    }
+
+    &-90 {
+        @include width(90);
+    }
+
+    &-95 {
+        @include width(95);
+    }
+
+    &-100 {
+        @include width(100);
+    }
+}

@@ -1,6 +1,6 @@
 {
     "name": "@militer/template",
-    "description": "militer",
+    "description": "militer-template",
     "version": "0.1.0",
     "main": "index.js",
     "author": "Sergei MILITER Tarasov <militer@htmlcssjs.pro> (https://htmlcssjs.pro)",

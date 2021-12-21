@@ -1,0 +1,7 @@
+$margin-v-top: 100px !default;
+$margin-v-bottom: 100px !default;
+
+%margin-v {
+    margin-top: $margin-v-top;
+    margin-bottom: $margin-v-bottom;
+}

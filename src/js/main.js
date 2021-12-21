@@ -1,13 +1,15 @@
 'use strict';
 
-import { newFetch, fetchForm }
-    from 'assets/js/modules/fetch.mjs';
-import { clickHandler }
-    from 'assets/js/modules/handler.mjs';
+import popstate from 'modules/popstate.mjs';
+import clickHandler from 'modules/click-handler.mjs';
+import newFetch from 'modules/fetch.mjs';
+
 // import Slider from 'assets/militerslider/militerslider';
+// import dropDown from 'components/dropdown/dropdown.mjs';
 
-window.addEventListener('popstate', () => newFetch(history.state));
+// dropDown();
 
+popstate();
 clickHandler();
 
 
@@ -19,7 +21,7 @@ if ($townSelector) {
             body: JSON.stringify({'town': town})
         };
         newFetch('/api/set-town', fetchInit, () => {
-            document.querySelector('.offers .offers-list') && mainReload();
+            document.querySelector('.offers .offers-list');
         });
     });
 }
@@ -84,15 +86,15 @@ if ($offerForm) {
     });
 }
 
-new Slider({
-    main:          'slider',
-    arrowBtns:     false, // default true
-    prev:          '',
-    next:          '',
-    dots:          true, // default true
-    infinity:      true, // default true
-    auto:          true, // default true
-    autoInterval:  5, // default 5
-    slidesToShow:  1, // default 1
-    startPosition: 0, // default 0
-});
+// new Slider({
+//     main:          'slider',
+//     arrowBtns:     false, // default true
+//     prev:          '',
+//     next:          '',
+//     dots:          true, // default true
+//     infinity:      true, // default true
+//     auto:          true, // default true
+//     autoInterval:  5, // default 5
+//     slidesToShow:  1, // default 1
+//     startPosition: 0, // default 0
+// });

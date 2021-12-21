@@ -1,0 +1,208 @@
+%display-block {
+    display: block;
+    box-sizing: border-box;
+}
+
+%margin0padding0 {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    @extend %margin0padding0;
+    font-size: 62.5%;
+}
+
+body {
+    @extend %display-block;
+    @extend %margin0padding0;
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 1.25;
+}
+
+%h {
+    @extend %display-block;
+    font-weight: bolder;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+
+    // margin: 1em;
+    // padding: 1em;
+}
+
+h1 {
+    @extend %h;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+h2 {
+    @extend %h;
+    font-size: 2em;
+}
+
+h3 {
+    @extend %h;
+    font-size: 1.75em;
+}
+
+h4 {
+    @extend %h;
+    font-size: 1.5em;
+}
+
+h5 {
+    @extend %h;
+    font-size: 1.25em;
+}
+
+h6 {
+    @extend %h;
+    font-size: 1em;
+}
+
+header {
+    @extend %display-block;
+}
+
+footer {
+    @extend %display-block;
+}
+
+main {
+    @extend %display-block;
+}
+
+aside {
+    @extend %display-block;
+}
+
+nav {
+    @extend %display-block;
+}
+
+section {
+    @extend %display-block;
+}
+
+article {
+    @extend %display-block;
+}
+
+pre {
+    @extend %margin0padding0;
+}
+
+code {
+    @extend %margin0padding0;
+}
+
+div {
+    @extend %display-block;
+    @extend %margin0padding0;
+}
+
+a {
+    @extend %display-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+span {
+    @extend %display-block;
+}
+
+p {
+    @extend %display-block;
+    @extend %margin0padding0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+img {
+    @extend %display-block;
+    max-width: 100%;
+    height: auto;
+    border-style: none;
+}
+
+%font {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 1em;
+    line-height: 1.25;
+}
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+    @extend %display-block;
+    @extend %font;
+    cursor: pointer;
+    text-align: center;
+
+    &:focus,
+    &.focus {
+        outline: none;
+    }
+
+    &:disabled,
+    &.disabled {
+        opacity: 0.65;
+    }
+}
+
+%ist {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form {
+    @extend %display-block;
+    @extend %margin0padding0;
+}
+
+input {
+    @extend %ist;
+    @extend %font;
+    // overflow: visible;
+}
+
+select,
+option {
+    @extend %ist;
+    @extend %font;
+}
+
+textarea {
+    @extend %ist;
+    @extend %font;
+    resize: vertical;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ul {
+    @extend %margin0padding0;
+}
+
+ul li {
+    @extend %margin0padding0;
+    list-style: none;
+}
+
+.dn,
+[hidden] {
+    display: none;
+}

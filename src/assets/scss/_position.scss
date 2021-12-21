@@ -1,0 +1,77 @@
+@mixin position($position: a, $top: null, $right: null, $bottom: null, $left: null) {
+    $position-map: (
+        a: absolute,
+        f: fixed,
+        r: relative,
+        s: sticky,
+    );
+
+    @each $key, $val in $position-map {
+        @if $position == $key {
+            position: #{map-get($position-map, $position)};
+        } @else if $position == $val {
+            position: $position;
+        }
+    }
+
+    @if $top != null {
+        top: $top;
+    }
+
+    @if $left != null {
+        left: $left;
+    }
+
+    @if $bottom != null {
+        bottom: $bottom;
+    }
+
+    @if $right != null {
+        right: $right;
+    }
+}
+
+@mixin corner($top-or-bottom, $left-or-right) {
+    position: absolute;
+    #{$top-or-bottom}: 0;
+    #{$left-or-right}: 0;
+}
+
+%position {
+    &-r,
+    &-relative {
+        @include position(r);
+    }
+
+    &-a,
+    &-absolute {
+        @include position(a, 0, 0, 0, 0);
+    }
+
+    &-f,
+    &-fixed {
+        @include position(f, 0, 0, 0, 0);
+    }
+
+    &-top {
+        @include position(f, 0, 0, null, 0);
+    }
+    &-bottom {
+        @include position(f, null, 0, 0, 0);
+    }
+
+    &-corner {
+        &_top-left {
+            @include corner(top, left);
+        }
+        &_top-right {
+            @include corner(top, right);
+        }
+        &_bottom-left {
+            @include corner(bottom, left);
+        }
+        &_bottom-right {
+            @include corner(bottom, right);
+        }
+    }
+}

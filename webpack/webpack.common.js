@@ -25,8 +25,8 @@ delete process.env.outputFilename;
 delete process.env.outputPath;
 delete process.env.mode;
 
-const DEV = env.mode !== 'production';
-
+const PROD = env.mode === 'production';
+const DEV = !PROD;
 
 const defaults = {
     name:              'main',
@@ -52,9 +52,9 @@ module.exports = {
             : env.outputPath ? resolve(env.outputPath)
                 : resolve(defaults.outputPath),
     getSourceMapFilename: () => defaults.sourceMapFilename,
-    getMode:              () => DEV ? 'development' : 'production',
+    getMode:              () => PROD ? 'production' : 'development',
     getDevtool:           () => DEV ? 'source-map' : 'nosources-source-map',
-    getOptimization:      () => ({minimize: !DEV}),
+    getOptimization:      () => ({minimize: PROD}),
     getDevServer:         contentBase => ({
         contentBase: resolve(contentBase),
         overlay:     true
@@ -62,13 +62,15 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.mjs'], //* ['.js', '.mjs', '.json', '.jsx', '.css']
         modules:    [
-            resolve('assets'),
             resolve('src/js/modules'),
+            resolve('src/components'),
+            resolve('src/assets'),
             resolve('node_modules'),
         ],
         alias: {
-            assets:  resolve('assets'),
-            modules: resolve('src/js/modules'),
+            modules:    resolve('src/js/modules'),
+            components: resolve('src/components'),
+            assets:     resolve('src/assets'),
 
             // a list of module name aliases
             // aliases are imported relative to the current context

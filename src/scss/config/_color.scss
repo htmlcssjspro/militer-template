@@ -1,0 +1,45 @@
+//* Colors
+
+// bootstrap colors
+
+$grey-100: #f8f9fa !default;
+$grey-200: #e9ecef !default;
+$grey-300: #dee2e6 !default;
+$grey-400: #ced4da !default;
+$grey-500: #adb5bd !default;
+$grey-600: #6c757d !default;
+$grey-700: #495057 !default;
+$grey-800: #343a40 !default;
+$grey-900: #212529 !default;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+$pure-white: #ffffff;
+$pure-black: #000000;
+
+$white: $grey-100;
+$black: $grey-900;
+
+//* theme colors
+
+$dark: $grey-700 !default;
+$light: $grey-300 !default;
+
+$primary: $blue !default;
+$secondary: $grey-600 !default;
+
+$info: $cyan !default;
+$success: $green !default;
+$warning: $yellow !default;
+$danger: $red !default;
+
+$text: $grey-900 !default;

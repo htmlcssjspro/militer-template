@@ -1,8 +1,13 @@
-@if $DEV and $DESIGN_GRID {
+@use 'scss/config/config';
+@use 'scss/config/viewport';
+@use 'assets/scss/position';
+
+@if config.$DEV and config.$DESIGN_GRID {
     .design-grid {
-        max-width: $content-max-width;
-        margin: $wrapper-margin;
-        @include position(f, 0, 0, 0, 0);
+        max-width: viewport.$content-max-width;
+        margin: viewport.$wrapper-margin;
+        @extend %position-fixed;
+        // @include position.position(f, 0, 0, 0, 0);
         z-index: 100;
 
         &__wrapper {
@@ -40,7 +45,7 @@
             }
         }
     }
-} @else if $DEV {
+} @else if config.$DEV {
     .design-grid {
         display: none;
     }

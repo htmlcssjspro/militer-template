@@ -1,0 +1,64 @@
+@use 'scss/config/config';
+@use 'assets/scss/flex';
+
+//* Viewport
+// bootstrap
+$breakpoint-xl: 1200px !default;
+$breakpoint-lg: 992px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-sm: 576px !default;
+$breakpoint-xs: 0 !default;
+
+$max-width-xl: 1140px !default;
+$max-width-lg: 960px !default;
+$max-width-md: 720px !default;
+$max-width-sm: 540px !default;
+
+//* container & content size
+$container-max-width: 1920px !default;
+$content-max-width: 1366px !default;
+$content-min-width: 320px !default;
+
+//* container&wrapper margin&padding
+$container-margin: 0 auto !default;
+$container-padding: 0 !default;
+$wrapper-margin: 0 auto !default;
+$wrapper-padding: 0 !default;
+$wrapper-padding: 1rem 0;
+
+%container {
+    max-width: $container-max-width;
+    min-width: $content-min-width;
+    margin: $container-margin;
+    padding: $container-padding;
+
+    @if config.$DEV {
+        // border: 1px solid #ffdddd;
+        background-color: #ffa0a070;
+    }
+}
+
+%wrapper {
+    max-width: $content-max-width;
+    min-width: $content-min-width;
+    margin: $wrapper-margin;
+    padding: $wrapper-padding;
+
+    @if config.$DEV {
+        // border: 1px solid #ddffdd;
+        background-color: #a0ffa070;
+    }
+}
+
+@if config.$ASIDE {
+    .content {
+        & {
+            @extend %container;
+        }
+
+        &__wrapper {
+            @extend %wrapper;
+            @extend %flex-row-sb-fs;
+        }
+    }
+}

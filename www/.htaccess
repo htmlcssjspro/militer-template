@@ -3,11 +3,11 @@ Options -Indexes
 DirectoryIndex /public/index.php
 RewriteEngine On
 RewriteBase /public/
-# RewriteRule ^favicon.ico$ public/favicon.ico [NC,L]
-# RewriteRule ^robots.txt$ public/robots.txt [NC,L]
-#RewriteRule ^robots.txt$ public/robots.php [NC,L]
-# RewriteRule ^sitemap.xml$ public/sitemap.xml [NC,L]
-#RewriteRule ^sitemap.xml$ public/sitemap.php [NC,L]
+RewriteRule ^favicon.ico$ favicon.ico [NC,L]
+RewriteRule ^robots.txt$ robots.txt [NC,L]
+# RewriteRule ^robots.txt$ robots.php [NC,L]
+RewriteRule ^sitemap.xml$ public/sitemap.xml [NC,L]
+# RewriteRule ^sitemap.xml$ sitemap.php [NC,L]
 RewriteRule ^400$ http/400.php [L]
 RewriteRule ^404$ http/404.php [L]
 RewriteRule ^410$ http/410.php [L]
@@ -15,6 +15,8 @@ ErrorDocument 400 400
 ErrorDocument 403 404
 ErrorDocument 404 404
 ErrorDocument 410 410
+RewriteRule ^css/(.*) css/$1 [L]
+RewriteRule ^js/(.*) js/$1 [L]
 ### Убираем повторяющиеся слеши (//) в URL
 RewriteCond %{THE_REQUEST} //
 RewriteRule .* /$0 [R=301,L]

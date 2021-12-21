@@ -1,3 +1,20 @@
+@use 'scss/config/config';
+@use 'scss/config/viewport';
+@use 'assets/scss/flex';
+
 .main {
     // grid-area: main;
+    @if config.$ASIDE {
+        @include flex.flex-col(9, 0, 9);
+    } @else {
+        @extend %container;
+    }
+
+    &__top,
+    &__bottom,
+    &__wrapper {
+        @if not config.$ASIDE {
+            @extend %wrapper;
+        }
+    }
 }

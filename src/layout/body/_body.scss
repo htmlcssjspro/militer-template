@@ -1,5 +1,7 @@
+@use 'scss/config/font';
+@use 'scss/config/color';
+
 .body {
-    font-family: '#{$font-family}',
-    sans-serif;
-    color: $color-text;
+    font-family: '#{font.$family}', sans-serif;
+    color: color.$text;
 }
