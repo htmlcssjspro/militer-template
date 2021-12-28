@@ -67,8 +67,9 @@ ftp.root = ftpConfig.root ? ftpConfig.root : '/';
 //*****************************************************************************
 const DEV = true; // * true | false
 const PROD = !DEV;
+const USE_PHP = false; // * true | false
 const INCLUDE_SCSS = false; // * true | false
-const USE_FTP = true; // * true | false
+const USE_FTP = false; // * true | false
 
 //*****************************************************************************
 
@@ -135,25 +136,24 @@ config.img.pubGlobs = `${config.img.pub}/**`;
 // config.restPubGlobs = `${config.pub}/**/*.(txt|xml|json)`; // work
 config.restPubGlobs = [
     `${config.www}/.htaccess`,
-    `${config.www}/log/errors.log`,
-    `${config.pub}/*.{txt,xml,ico,json}`, // work too //! NO Spases in brases !
+    `${config.pub}/*.{html,txt,xml,ico,json}`, // work too //! NO Spases in brases !
 ];
+USE_PHP && config.restPubGlobs.push(`${config.www}/log/errors.log`);
 
 
 config.srcWatchGlobs = [
-    config.php.srcWatchGlobs,
     config.js.watchGlobs,
     config.scss.watchGlobs,
     config.css.srcGlobs,
 ].flat();
+USE_PHP && (config.srcWatchGlobs = config.srcWatchGlobs.concat(config.php.srcWatchGlobs));
 
 config.ftpGlobs = [
-    config.php.ftpWatchGlobs,
     config.js.pubGlobs,
     config.css.pubGlobs,
     config.restPubGlobs,
-    // `${config.pub}/**`,
 ].flat();
+USE_PHP && (config.ftpGlobs = config.ftpGlobs.concat(config.php.ftpWatchGlobs));
 
 
 const options = {};
@@ -325,7 +325,8 @@ function scss(filePath) {
         .pipe(gulpif(DEV, sourcemaps.init()))
         .pipe(gulpif(DEV, sourcemaps.identityMap()))
         // .pipe(sassGlob())
-        .pipe(sass.sync({includePaths: [config.src]}).on('error', sass.logError))
+        .pipe(sass.sync({includePaths: [config.src, 'node_modules']})
+            .on('error', sass.logError))
         .pipe(gulpif(DEV,
             postcss([autoprefixer()]),
             postcss([autoprefixer(), cssnano()]))
