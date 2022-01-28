@@ -32,7 +32,7 @@ function getDesignGrid($grid = 'design-grid')
 
 function getLayoutElement(string $type, string $name)
 {
-    getFile(LAYOUT . "/{$type}/{$name}.php");
+    getFile(VIEWS . "/layout/{$type}/{$name}.php");
 }
 
 

@@ -67,7 +67,7 @@ ftp.root = ftpConfig.root ? ftpConfig.root : '/';
 //*****************************************************************************
 const DEV = true; // * true | false
 const PROD = !DEV;
-const USE_PHP = false; // * true | false
+const USE_PHP = true; // * true | false
 const INCLUDE_SCSS = false; // * true | false
 const USE_FTP = false; // * true | false
 

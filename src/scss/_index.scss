@@ -5,11 +5,6 @@
 @include font-face('#{$font-family}');
 
 
-.dn {
-    display: none;
-}
-
-
 //* Assets Common
 @import 'assets/scss/flex';
 @import 'assets/scss/media';

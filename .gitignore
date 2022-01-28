@@ -8,13 +8,22 @@ test
 
 gulp/ftpConfig.js
 
+src/scss/test.scss
+
 www/config/dbconfig.php
+
 www/components/**
-www/layout/**
+
+www/views/layouts/**
+www/views/layout/**
+
 www/views/pages/**
 www/views/sections/**
 www/views/popups/**
 www/views/email/**
+
 www/public/css/**
 www/public/js/**
 www/public/fonts/**
+
+!.gitkeep
