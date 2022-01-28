@@ -221,6 +221,48 @@ function watcher() {
     ftpWatcher.on('unlinkDir', folderPath => dispatch(ftpUnlinkDir, folderPath, 'RMDirLoc'));
 }
 
+//* options.watch.events = ['add', 'addDir', 'change', 'unlink', 'unlinkDir', 'ready'];
+//* options.watch.events = ['all'];
+const scanMessage = 'scan complete. Ready for changes';
+function logInitial() {
+    logHeader(
+        c.greenBright('Gulp START'),
+        c.greenBright('Mode: ') + c.yellowBright(mode),
+        c.greenBright('USE_FTP: ') + c.magentaBright(USE_FTP)
+    );
+}
+
+//* SRC Watcher
+function srcWatcher() {
+    options.watch.events = ['change', 'add', 'unlink', 'ready'];
+    const srcWatcher = watch(config.srcWatchGlobs, options.watch);
+    srcWatcher.on('ready', () => logYellowFirst(pad('SRC', 3), scanMessage));
+    srcWatcher.on('change', filePath => dispatch(change, filePath, c.bold.inverse(pad('CHANGESRC'))));
+    srcWatcher.on('add', filePath => dispatch(change, filePath, c.bold.inverse(pad('ADDSRC'))));
+    srcWatcher.on('unlink', filePath => dispatch(srcUnlink, filePath, c.bold.inverse(pad('DELSRC'))));
+}
+
+//* IMG Watcher
+function imgWatcher() {
+    options.watch.events = ['change', 'add', 'unlink', 'ready'];
+    const imgWatcher = watch(config.img.srcGlobs, options.watch);
+    imgWatcher.on('ready', () => logYellowFirst(pad('IMG', 3), scanMessage));
+    imgWatcher.on('add', filePath => dispatch(img, filePath, 'ADDImgLoc'));
+    imgWatcher.on('change', filePath => dispatch(img, filePath, 'CHGImgLoc'));
+    imgWatcher.on('unlink', filePath => dispatch(imgUnlink, filePath, 'DELImgLoc'));
+}
+
+//* FTP Watcher
+function ftpWatcher() {
+    options.watch.events = ['all'];
+    const ftpWatcher = watch(config.ftpGlobs, options.watch);
+    ftpWatcher.on('ready', () => logYellowFirst(pad('FTP', 3), scanMessage));
+    ftpWatcher.on('change', filePath => dispatch(ftpCopy, filePath, 'CHANGELoc'));
+    ftpWatcher.on('add', filePath => dispatch(ftpCopy, filePath, 'ADDLoc'));
+    ftpWatcher.on('addDir', folderPath => dispatch(ftpCopy, folderPath, 'ADDDirLoc'));
+    ftpWatcher.on('unlink', filePath => dispatch(ftpUnlink, filePath, 'DELLoc'));
+    ftpWatcher.on('unlinkDir', folderPath => dispatch(ftpUnlinkDir, folderPath, 'RMDirLoc'));
+}
 
 function dispatch(func, filePath, message) {
     filePath = slash(filePath);

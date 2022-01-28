@@ -160,30 +160,30 @@ input[type='submit'] {
     }
 }
 
-%ist {
-    margin: 0;
-    box-sizing: border-box;
-}
-
 form {
     @extend %display-block;
     @extend %margin0padding0;
 }
 
 input {
-    @extend %ist;
+    @extend %display-block;
+    @extend %margin0padding0;
     @extend %font;
-    // overflow: visible;
+    width: 100%;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
 }
 
 select,
 option {
-    @extend %ist;
+    @extend %display-block;
+    @extend %margin0padding0;
     @extend %font;
 }
 
 textarea {
-    @extend %ist;
+    @extend %display-block;
+    @extend %margin0padding0;
     @extend %font;
     resize: vertical;
 }
