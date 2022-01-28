@@ -1,0 +1,37 @@
+@use 'sass:math';
+@use 'assets/scss/position';
+
+@function aspect-ratio($x, $y) {
+    @return math.percentage(math.div($y, $x));
+}
+
+@mixin container-aspect-ratio-padding($x, $y) {
+    padding-top: aspect-ratio($x, $y);
+}
+
+%container-aspect-ratio {
+    $car: &;
+
+    & {
+        @extend %position-relative;
+    }
+
+    &_16-9 {
+        @extend #{$car};
+        @include container-aspect-ratio-padding(16, 9);
+    }
+
+    &_16-10 {
+        @extend #{$car};
+        @include container-aspect-ratio-padding(16, 10);
+    }
+
+    &_4-3 {
+        @extend #{$car};
+        @include container-aspect-ratio-padding(4, 3);
+    }
+
+    &__wrapper {
+        @extend %position-absolute;
+    }
+}

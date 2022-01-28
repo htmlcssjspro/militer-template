@@ -1,0 +1,52 @@
+@use 'scss/config/config';
+@use 'scss/config/viewport';
+@use 'assets/scss/position';
+
+@if config.$DEV and config.$DESIGN_GRID {
+    .design-grid {
+        max-width: viewport.$content-max-width;
+        margin: viewport.$wrapper-margin;
+        @extend %position-fixed;
+        // @include position.position(f, 0, 0, 0, 0);
+        z-index: 100;
+
+        &__wrapper {
+            margin: 0 -10px;
+            @extend %flex-sb;
+            // position: relative;
+        }
+
+        &__col {
+            height: 100vh;
+            flex: 1 1;
+            border-left: 1px solid blue;
+            border-right: 1px solid blue;
+            margin: 0 10px;
+            // position: relative;
+        }
+
+        &__line {
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background-color: blue;
+            z-index: 1000;
+
+            $line: &;
+
+            &_left {
+                @extend #{$line};
+                left: 0;
+            }
+
+            &_right {
+                @extend #{$line};
+                right: 0;
+            }
+        }
+    }
+} @else if config.$DEV {
+    .design-grid {
+        display: none;
+    }
+}
