@@ -1,5 +1,5 @@
 <?php
 
 
-$title = 'Title';
-$description = 'Description';
+$title = 'template.htmlcssjs.pro';
+$description = 'template.htmlcssjs.pro';

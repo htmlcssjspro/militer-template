@@ -5,6 +5,6 @@
 <title><?= getTitle() ?></title>
 <meta name="description" content="<?= getDescription() ?>">
 
-<meta name="author" content="Sergei MILITER Tarasov https://htmlcssjs.pro">
+<meta name="author" content="Sergei MILITER https://htmlcssjs.pro militer@htmlcssjs.pro">
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">

@@ -202,7 +202,11 @@ ul li {
     list-style: none;
 }
 
-.dn,
-[hidden] {
+.dn {
     display: none;
+}
+
+.hidden,
+[hidden] {
+    visibility: hidden;
 }

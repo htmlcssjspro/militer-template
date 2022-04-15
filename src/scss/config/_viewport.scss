@@ -1,5 +1,6 @@
-@use 'scss/config/config';
-@use 'assets/scss/flex';
+// @use 'scss/config/config';
+@use 'config';
+// @use 'assets/scss/flex';
 
 //* Viewport
 // bootstrap
@@ -18,22 +19,33 @@ $max-width-sm: 540px !default;
 $container-max-width: 1920px !default;
 $content-max-width: 1366px !default;
 $content-min-width: 320px !default;
+$container-gap: 100px !default;
 
 //* container&wrapper margin&padding
 $container-margin: 0 auto !default;
 $container-padding: 0 !default;
+
 $wrapper-margin: 0 auto !default;
-$wrapper-padding: 0 !default;
-$wrapper-padding: 1rem 0;
+$wrapper-padding: 1rem 0 !default;
+
+@function container-margin() {
+    @if config.$CONTAINER_GAP {
+        @return $container-gap auto;
+    } @else {
+        @return $container-margin;
+    }
+}
 
 %container {
     max-width: $container-max-width;
     min-width: $content-min-width;
-    margin: $container-margin;
+    margin: container-margin();
     padding: $container-padding;
 
     @if config.$DEV {
-        // border: 1px solid #ffdddd;
+        margin-bottom: 1px;
+        border-top: 1px solid #ff0000;
+        border-bottom: 1px solid #ff0000;
         background-color: #ffa0a070;
     }
 }
@@ -45,7 +57,9 @@ $wrapper-padding: 1rem 0;
     padding: $wrapper-padding;
 
     @if config.$DEV {
-        // border: 1px solid #ddffdd;
+        margin-bottom: 1px;
+        border-top: 1px solid #00ff00;
+        border-bottom: 1px solid #00ff00;
         background-color: #a0ffa070;
     }
 }

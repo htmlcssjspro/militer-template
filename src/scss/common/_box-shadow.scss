@@ -1,14 +1,13 @@
 @use 'scss/config/color';
 
 $-color: color.$dark;
-$-box-shadow: 0px 0px 1rem 0px rgba(color.$dark, 0.2) !default;
-// $box-shadow: 0px 0px 1rem 0px rgba(color.$dark, 0.2) !default;
+$-box-shadow: 0px 0px 0.5rem 1rem rgba(color.$dark, 0.2);
 
 @function -box-shadow() {
-    @return $-box-shadow or (0 0.5rem 1rem rgba(color.$dark, 0.15));
+    @return $-box-shadow;
 }
 
-@mixin box-shadow($box-shadow: null, $color: null) {
+@mixin config($box-shadow: null, $color: null) {
     @if $box-shadow {
         $-box-shadow: $box-shadow !global;
     }
@@ -17,6 +16,10 @@ $-box-shadow: 0px 0px 1rem 0px rgba(color.$dark, 0.2) !default;
     }
 }
 
-%box-shadow {
+@mixin box-shadow {
     box-shadow: -box-shadow();
+}
+
+%box-shadow {
+    @include box-shadow;
 }

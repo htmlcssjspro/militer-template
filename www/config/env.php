@@ -1,6 +1,5 @@
 <?php
 
-
 define('DEV', true); // Установить в false на production
 
 if (DEV) {

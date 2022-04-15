@@ -3,6 +3,7 @@
 
 //* Gulp Main
 //* const {src, dest, watch, series, parallel} = require('gulp');
+
 const {src, dest, watch} = require('gulp');
 
 //* Gulp Common
@@ -24,6 +25,7 @@ const {src, dest, watch} = require('gulp');
 //     metadata    : 'none', // string | string[], *none | all | exif | icc | xmp
 //     // buffer: // Buffer: Buffer to optimize
 // };
+
 const gulpif = require('gulp-if');
 const sourcemaps = require('gulp-sourcemaps');
 const webp = require('gulp-webp');
@@ -48,32 +50,26 @@ const {execute, slash} = require('./gulp/helpers.js');
 
 //* FTP
 const vinylFtp = require('vinyl-ftp');
-const ftpConfig = require('./gulp/ftpConfig');
+// const ftpConfig = require('./gulp/ftpConfig');
+const {host, user, password, root} = require('./gulp/ftpConfig');
 let ftp = {};
 ftp = vinylFtp.create({
-    host:           ftpConfig.host,
-    user:           ftpConfig.user,
-    password:       ftpConfig.password,
+    host,
+    user,
+    password,
     parallel:       8,
     maxConnections: 1024,
     reload:         true,
     log:            logFTP,
 });
-ftp.root = ftpConfig.root ? ftpConfig.root : '/';
+ftp.root = root ?? '/';
 
 
 //*****************************************************************************
 //*** Project Settings
 //*****************************************************************************
-const DEV = true; // * true | false
-const PROD = !DEV;
-const USE_PHP = true; // * true | false
-const INCLUDE_SCSS = false; // * true | false
-const USE_FTP = false; // * true | false
-
+const {DEV, PROD, MODE, USE_PHP, INCLUDE_SCSS, USE_FTP} = require('./gulp/gulpConfig.js');
 //*****************************************************************************
-
-const mode = DEV ? 'development' : 'production';
 
 
 const config = {};
@@ -87,13 +83,11 @@ config.pub = `${config.www}/public`;
 config.php = {};
 config.php.srcWatchGlobs = [
     `${config.src}/components/**/*.php`,
-    `${config.src}/layout/**/*.php`,
     `${config.src}/views/**/*.php`,
 ];
 config.php.ftpWatchGlobs = [
     `${config.www}/config/**/*.php`,
     `${config.www}/components/**/*.php`,
-    `${config.www}/layout/**/*.php`,
     `${config.www}/views/**/*.php`,
     `${config.pub}/index.php`,
 ];
@@ -117,7 +111,6 @@ config.scss.watchGlobs = [
     `${config.scss.src}/**/*.scss`,
     `${config.src}/assets/**/*.scss`,
     `${config.src}/components/**/*.scss`,
-    `${config.src}/layout/**/*.scss`,
     `${config.src}/views/**/*.scss`,
 ];
 
@@ -183,7 +176,7 @@ options.ftpClean = {
 function watcher() {
     logHeader(
         c.greenBright('Gulp START'),
-        c.greenBright('Mode: ') + c.yellowBright(mode),
+        c.greenBright('Mode: ') + c.yellowBright(MODE),
         c.greenBright('USE_FTP: ') + c.magentaBright(USE_FTP)
     );
 
@@ -227,7 +220,7 @@ const scanMessage = 'scan complete. Ready for changes';
 function logInitial() {
     logHeader(
         c.greenBright('Gulp START'),
-        c.greenBright('Mode: ') + c.yellowBright(mode),
+        c.greenBright('Mode: ') + c.yellowBright(MODE),
         c.greenBright('USE_FTP: ') + c.magentaBright(USE_FTP)
     );
 }
@@ -318,7 +311,7 @@ function js(filePath) {
     }
 
     const command = 'npx webpack --config webpack/webpack.gulp.js';
-    process.env.mode = mode;
+    process.env.mode = MODE;
     if (path.extname(filePath) === '.mjs') {
         const entry = {};
         return src(config.js.srcGlobs, {base: config.js.src})

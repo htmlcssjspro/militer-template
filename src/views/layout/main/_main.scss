@@ -1,9 +1,11 @@
 @use 'scss/config/config';
 @use 'scss/config/viewport';
+@use 'scss/common/grid';
 @use 'assets/scss/flex';
 
 .main {
-    // grid-area: main;
+    @include grid.grid-area(main);
+
     @if config.$ASIDE {
         @include flex.flex-col(9, 0, 9);
     } @else {

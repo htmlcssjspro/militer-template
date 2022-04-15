@@ -1,4 +1,5 @@
 <footer id="footer" class="footer">
+    <div class="footer__top"></div>
     <div class="footer__wrapper">
         <div class="footer__logo">Сергей MILITER</div>
         <nav class="footer__nav">
@@ -9,10 +10,9 @@
             <a href="#contacts" class="footer__link">контакты</a>
         </nav>
     </div>
-</footer>
-
-<footer id="footer" class="footer">
-    <div class="footer__top"></div>
-    <div class="footer__wrapper"></div>
-    <div class="footer__bottom"></div>
+    <div class="footer__bottom">
+        <p>
+            &copy; 2021
+        </p>
+    </div>
 </footer>

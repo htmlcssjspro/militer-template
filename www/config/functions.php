@@ -40,7 +40,7 @@ function getLayoutElement(string $type, string $name)
 //*** Content
 //*****************************************************************************
 
-function getMainContent(string $page)
+function getMainContent(string $page = 'home-page')
 {
     getFile(VIEWS . "/pages/{$page}.php");
 }
@@ -68,12 +68,12 @@ function getFile(string $file)
 function getTitle()
 {
     global $title;
-    return $title;
+    return $title ?? 'title';
 }
 function getDescription()
 {
     global $description;
-    return $description;
+    return $description ?? 'description';
 }
 
 
@@ -125,4 +125,16 @@ function getJS(string $js, bool $preload = false)
     } else {
         echo "<!-- File {$js} not found -->";
     }
+}
+
+
+function getFullYear()
+{
+    return date('Y');
+}
+
+function copyright($text = '')
+{
+    $year = getFullYear();
+    echo "<p>&copy; $year $text</p>";
 }

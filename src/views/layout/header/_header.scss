@@ -1,13 +1,18 @@
+@use 'scss/config/config';
 @use 'scss/config/viewport';
+@use 'scss/common/grid';
 @use 'assets/scss/flex';
 
 .header {
-    $header: &;
-
     & {
+        @include grid.grid-area(header);
         @extend %container;
-        // grid-area: header;
+        @if config.$CONTAINER_GAP {
+            margin-top: 0;
+        }
     }
+
+    $header: &;
 
     &__top,
     &__bottom,

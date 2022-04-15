@@ -1,13 +1,18 @@
+@use 'scss/config/config';
 @use 'scss/config/viewport';
+@use 'scss/common/grid';
 @use 'assets/scss/flex';
 
 .footer {
-    $footer: &;
-
     & {
-        // grid-area: footer;
+        @include grid.grid-area(footer);
         @extend %container;
+        @if config.$CONTAINER_GAP {
+            margin-bottom: 0;
+        }
     }
+
+    $footer: &;
 
     &__top,
     &__bottom,

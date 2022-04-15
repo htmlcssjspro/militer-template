@@ -1,12 +1,13 @@
 @use 'scss/config/config';
 @use 'scss/config/viewport';
+@use 'scss/common/grid';
 @use 'assets/scss/flex';
 
 .aside {
     $aside: &;
 
     & {
-        // grid-area: aside;
+        @include grid.grid-area(aside);
 
         @if config.$ASIDE {
             @include flex.flex-col(3, 0, 3);

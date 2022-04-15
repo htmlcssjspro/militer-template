@@ -10,19 +10,10 @@
 </head>
 
 <body class="body">
-
-    <header id="header" class="header">
-        <?php getHeader('landing-header'); ?>
-    </header>
-
-    <main id="main" class="main">
-        <?php getMainContent('home-page'); ?>
-    </main>
-
-    <footer id="footer" class="footer">
-        <?php getFooter('landing-footer'); ?>
-    </footer>
-
+    <?php getHeader('landing-header'); ?>
+    <?php getMainContent('home-page'); ?>
+    <?php getFooter('landing-footer'); ?>
+    <?php getDesignGrid(); ?>
 </body>
 
 </html>

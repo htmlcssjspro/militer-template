@@ -1,11 +1,8 @@
-@import 'container/container';
-@import 'wrapper/wrapper';
+@use 'body/body';
 
-@import 'body/body';
+@use 'header/header';
+@use 'main/main';
+@use 'aside/aside';
+@use 'footer/footer';
 
-@import 'header/header';
-@import 'main/main';
-@import 'aside/aside';
-@import 'footer/footer';
-
-@import 'design-grid/design-grid';
+@use 'design-grid/design-grid';
